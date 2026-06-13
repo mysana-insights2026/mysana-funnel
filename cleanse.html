@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Bio-Health Insights | CleanseSana Colon Detox</title>
+    <style>
+        :root { --bg: #f9fafb; --text: #111827; --sub: #4b5563; --accent: #16a34a; --border: #e5e7eb; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 0; }
+        .container { max-width: 650px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; border-bottom: 2px solid var(--border); padding-bottom: 15px; margin-bottom: 25px; }
+        .badge { font-size: 0.75rem; font-weight: bold; letter-spacing: 1px; color: var(--accent); text-transform: uppercase; margin-bottom: 5px; }
+        h1, h2 { font-size: 1.65rem; line-height: 1.3; margin: 10px 0; }
+        .english { font-style: italic; color: var(--sub); font-weight: normal; margin-top: 5px; }
+        .sub-headline { font-size: 1.05rem; color: var(--sub); margin-bottom: 25px; }
+        .form-box { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; }
+        input { width: 100%; padding: 12px; box-sizing: border-box; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; }
+        .btn { display: block; width: 100%; background: var(--accent); color: white; border: none; padding: 15px; font-size: 1.1rem; font-weight: bold; border-radius: 6px; cursor: pointer; text-align: center; text-decoration: none; box-shadow: 0 4px 10px rgba(22,163,74,0.2); margin-top: 10px; width: 100%; box-sizing: border-box; }
+        footer { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 20px; font-size: 0.75rem; color: var(--sub); text-align: justify; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="badge">[DARM-ENTGIFTUNGS-PROTOKOLL – CLEANSESANA]</div>
+        <div class="badge" style="color: #6b7280;">[COLON DETOX PROTOCOL – CLEANSESANA]</div>
+    </header>
+
+    <main>
+        <!-- BƯỚC 1: OPT-IN CAPTURE -->
+        <div id="opt-in-section">
+            <h1>„Das toxische Stausyndrom: Spülen Sie den klebrigen Darmschlamm aus, der Ihre Energie blockiert.“</h1>
+            <h1 class="english">"The Comic Backup Syndrome: Flush Out The Sticky Intestinal Sludge Blockading Your Energy."</h1>
+            
+            <p class="sub-headline">Geben Sie Ihre Daten ein, um das E-Book „The Intestinal Flush Guide“ sofort als PDF herunterzuladen.</p>
+            <p class="sub-headline" style="font-style: italic;">Enter your details to instantly download the PDF Ebook "The Intestinal Flush Guide".</p>
+
+            <div class="form-box">
+                <form onsubmit="return handleFormSubmitLP2(this);">
+                    <input type="hidden" name="_to" value="mysana.insights@gmail.com">
+                    <div class="form-group">
+                        <label>Vorname / First Name</label>
+                        <input type="text" name="Vorname" required placeholder="z.B. Thomas / David">
+                    </div>
+                    <div class="form-group">
+                        <label>Beste E-Mail-Adresse / Best Email</label>
+                        <input type="email" name="Email" required placeholder="thomas@gmail.com">
+                    </div>
+                    <button type="submit" class="btn">🌿 GET MY DETOX GUIDE & ACCESS FORMULA</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- BƯỚC 2: REDIRECT & SOFT SELL -->
+        <div id="redirect-section" style="display: none;">
+            <div style="background: #d1fae5; color: #065f46; padding: 15px; border-radius: 6px; font-weight: bold; text-align: center; margin-bottom: 20px;">
+                ✔️ E-Book-Download gestartet! / Your Gut Detox Ebook download has started! Check your device.
+            </div>
+            <h2>„Befreien Sie Ihre Darmwände für maximale Nährstoffaufnahme“</h2>
+            <h2 class="english">"Release Your Intestinal Walls for Peak Nutrient Absorption"</h2>
+            <p>Die biologische Formel <strong>CleanseSana</strong> löst und spült den jahrelangen toxischen Schlamm sanft aus Ihrem Colon, ohne Krämpfe zu verursachen.</p>
+            <p style="font-style: italic; color: var(--sub);">The advanced formula <strong>CleanseSana</strong> safely dissolves and flushes years of toxic buildup from your colon without causing unnatural cramps.</p>
+            
+            <p style="font-weight: bold; text-align: center; margin-top: 30px;">Wählen Sie Ihre Sprache / Select your language:</p>
+            <a href="https://cleansesana.com/cleansesana-pdp-fe#aff=vovanluong555768blog" target="_blank" class="btn" style="background: #1e3a8a; margin-bottom: 10px;">👉 WEITER ZUR OFFIZIELLEN WEBSEITE (DEUTSCH)</a>
+            <a href="https://cleansesana.com/cleansesana-pdp-fe#aff=vovanluong555768blog" target="_blank" class="btn" style="background: #111827;">👉 PROCEED TO THE OFFICIAL SALES PAGE (ENGLISH)</a>
+        </div>
+    </main>
+
+    <footer>
+        <p><strong>Affiliate Disclosure:</strong> Als Produkttester kann ich eine kleine Provision aus qualifizierten Käufen über die bereitgestellten Links erhalten. / As a product reviewer, I may earn a small commission.</p>
+    </footer>
+</div>
+
+<script>
+    function handleFormSubmitLP2(form) {
+        window.open('sana-colon-detox.pdf', '_blank');
+        var data = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://formspree.io/f/xanygokl");
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.send(data);
+        document.getElementById('opt-in-section').style.display = 'none';
+        document.getElementById('redirect-section').style.display = 'block';
+        window.scrollTo(0, 0);
+        return false;
+    }
+</script>
+</body>
+</html>

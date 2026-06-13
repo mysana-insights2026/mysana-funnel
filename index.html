@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Bio-Health Insights | MetaboSana Cellular Rescue</title>
+    <style>
+        :root { --bg: #f9fafb; --text: #111827; --sub: #4b5563; --accent: #ea580c; --border: #e5e7eb; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 0; }
+        .container { max-width: 650px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; border-bottom: 2px solid var(--border); padding-bottom: 15px; margin-bottom: 25px; }
+        .badge { font-size: 0.75rem; font-weight: bold; letter-spacing: 1px; color: var(--accent); text-transform: uppercase; margin-bottom: 5px; }
+        h1, h2 { font-size: 1.65rem; line-height: 1.3; margin: 10px 0; }
+        .english { font-style: italic; color: var(--sub); font-weight: normal; margin-top: 5px; }
+        .sub-headline { font-size: 1.05rem; color: var(--sub); margin-bottom: 25px; }
+        .form-box { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; }
+        input { width: 100%; padding: 12px; box-sizing: border-box; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; }
+        .btn { display: block; width: 100%; background: var(--accent); color: white; border: none; padding: 15px; font-size: 1.1rem; font-weight: bold; border-radius: 6px; cursor: pointer; text-align: center; text-decoration: none; box-shadow: 0 4px 10px rgba(234,88,12,0.2); margin-top: 10px; width: 100%; box-sizing: border-box; }
+        footer { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 20px; font-size: 0.75rem; color: var(--sub); text-align: justify; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="badge">[BIOMEDIZINISCHER BERICHT – METABOSANA]</div>
+        <div class="badge" style="color: #6b7280;">[BIOMEDICAL REPORT – METABOSANA]</div>
+    </header>
+
+    <main>
+        <!-- BƯỚC 1: OPT-IN CAPTURE -->
+        <div id="opt-in-section">
+            <h1>„Erstickt Ihr Stoffwechsel von innen heraus? Warum herkömmliche Diäten scheitern, wenn Ihre Zellen in Fettdepots gefangen sind.“</h1>
+            <h1 class="english">"Is Your Metabolism Suffocating From The Inside Out? Why Standard Diets Fail When Your Cells Are Imprisoned In Fat Tissue."</h1>
+            
+            <p class="sub-headline">Melden Sie sich an, um Ihr kostenloses E-Book „The Mitochondrial Rescue“ sofort als PDF herunterzuladen.</p>
+            <p class="sub-headline" style="font-style: italic;">Sign up to instantly download your free Ebook "The Mitochondrial Rescue" as PDF.</p>
+
+            <div class="form-box">
+                <!-- KẾT NỐI TRỰC TIẾP ĐẾN HÀM AJAX KHÁNG LỖI NHẢY TRANG -->
+                <form onsubmit="return handleFormSubmitLP1(this);">
+                    <!-- Đuôi nhận mail ẩn phục vụ Formspree -->
+                    <input type="hidden" name="_to" value="mysana.insights@gmail.com">
+                    <div class="form-group">
+                        <label>Vorname / First Name</label>
+                        <input type="text" name="Vorname" required placeholder="z.B. Thomas / David">
+                    </div>
+                    <div class="form-group">
+                        <label>Beste E-Mail-Adresse / Best Email</label>
+                        <input type="email" name="Email" required placeholder="thomas@gmail.com">
+                    </div>
+                    <button type="submit" class="btn">💥 DOWNLOAD FREE EBOOK & ACCESS PROTOCOL</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- BƯỚC 2: ADVERTORIAL REDIRECT -->
+        <div id="redirect-section" style="display: none;">
+            <div style="background: #d1fae5; color: #065f46; padding: 15px; border-radius: 6px; font-weight: bold; text-align: center; margin-bottom: 20px;">
+                ✔️ E-Book-Download gestartet! / Your Ebook PDF download has started! Check your device.
+            </div>
+            <h2>„Das zelluläre Gefängnis: Wie biologische Erstickung den Gewichtsverlust dauerhaft blockiert“</h2>
+            <h2 class="english">"The Hidden Cell Prison: How Biological Suffocation Halts Weight Loss Permanently."</h2>
+            <p>Die deutsche Bio-Formel <strong>MetaboSana</strong> dringt in das dichte Gewebe ein, unterstützt die natürliche ATP-Produktion und stellt die Zellenergie wieder her – zu 100 % frei von Koffein-Crashs.</p>
+            <p style="font-style: italic; color: var(--sub);">The premium bio-formula <strong>MetaboSana</strong> penetrates dense tissue to support natural ATP production and restore cellular energy—with 100% zero caffeine crashes.</p>
+            
+            <p style="font-weight: bold; text-align: center; margin-top: 30px;">Wählen Sie Ihre Sprache / Select your language:</p>
+            <a href="https://metabosana.com/metabosana-pdp-fe#aff=vovanluong555768blog" target="_blank" class="btn" style="background: #1e3a8a; margin-bottom: 10px;">👉 WEITER ZUR OFFIZIELLEN WEBSEITE (DEUTSCH)</a>
+            <a href="https://metabosana.com/metabosana-pdp-fe#aff=vovanluong555768blog" target="_blank" class="btn" style="background: #111827;">👉 PROCEED TO THE OFFICIAL SALES PAGE (ENGLISH)</a>
+        </div>
+    </main>
+
+    <footer>
+        <p><strong>Affiliate Disclosure:</strong> Als Produkttester kann ich eine kleine Provision aus qualifizierten Käufen über die bereitgestellten Links erhalten, ohne dass für Sie zusätzliche Kosten entstehen. / As a product reviewer, I may earn a small commission from qualifying purchases through the links provided. <strong>FDA/EU Disclaimer:</strong> Diese Aussagen wurden nicht von der FDA bewertet.</p>
+    </footer>
+</div>
+
+<script>
+    function handleFormSubmitLP1(form) {
+        window.open('sana-cellular-rescue.pdf', '_blank');
+        var data = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://formspree.io/f/xanygokl"); // Gửi dữ liệu ngầm lên hệ thống Formspree bảo mật
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.send(data);
+        document.getElementById('opt-in-section').style.display = 'none';
+        document.getElementById('redirect-section').style.display = 'block';
+        window.scrollTo(0, 0);
+        return false;
+    }
+</script>
+</body>
+</html>
