@@ -19,6 +19,10 @@
         input { width: 100%; padding: 12px; box-sizing: border-box; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; }
         .btn { display: block; width: 100%; background: var(--accent); color: white; border: none; padding: 15px; font-size: 1.1rem; font-weight: bold; border-radius: 6px; cursor: pointer; text-align: center; text-decoration: none; box-shadow: 0 4px 10px rgba(234,88,12,0.2); margin-top: 10px; width: 100%; box-sizing: border-box; }
         footer { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 20px; font-size: 0.75rem; color: var(--sub); text-align: justify; }
+        .backup-box { margin: 20px 0; padding: 20px; background: #fffbeb; border: 1px solid #fef3c7; border-radius: 8px; text-align: center; }
+        .backup-title { margin: 0 0 12px 0; font-size: 0.95rem; color: #b45309; font-weight: bold; line-height: 1.4; }
+        .btn-download { display: inline-block; background: #d97706; color: white; padding: 12px 24px; font-size: 1rem; font-weight: bold; border-radius: 6px; text-decoration: none; box-shadow: 0 4px 10px rgba(217,119,6,0.2); transition: all 0.2s ease; }
+        .btn-download:hover { background: #b45309; }
     </style>
 </head>
 <body>
@@ -38,9 +42,7 @@
             <p class="sub-headline" style="font-style: italic;">Sign up to instantly download your free Ebook "The Mitochondrial Rescue" as PDF.</p>
 
             <div class="form-box">
-                <!-- KẾT NỐI TRỰC TIẾP ĐẾN HÀM AJAX KHÁNG LỖI NHẢY TRANG -->
                 <form onsubmit="return handleFormSubmitLP1(this);">
-                    <!-- Đuôi nhận mail ẩn phục vụ Formspree -->
                     <input type="hidden" name="_to" value="mysana.insights@gmail.com">
                     <div class="form-group">
                         <label>Vorname / First Name</label>
@@ -60,8 +62,19 @@
             <div style="background: #d1fae5; color: #065f46; padding: 15px; border-radius: 6px; font-weight: bold; text-align: center; margin-bottom: 20px;">
                 ✔️ E-Book-Download gestartet! / Your Ebook PDF download has started! Check your device.
             </div>
+            
             <h2>„Das zelluläre Gefängnis: Wie biologische Erstickung den Gewichtsverlust dauerhaft blockiert“</h2>
             <h2 class="english">"The Hidden Cell Prison: How Biological Suffocation Halts Weight Loss Permanently."</h2>
+
+            <!-- LỚP CHỐT CHẶN 2: NÚT TẢI DỰ PHÒNG KHI TRÌNH DUYỆT DI ĐỘNG CHẶN POP-UP -->
+            <div class="backup-box">
+                <p class="backup-title">
+                    ⚠️ Falls der Download nicht automatisch gestartet ist, klicken Sie hier:<br>
+                    <span style="font-style: italic; font-weight: normal; color: #4b5563;">If the download didn't start automatically, click below:</span>
+                </p>
+                <a href="sana-cellular-rescue.pdf" download class="btn-download">📥 DOWNLOAD PDF MANUAL DIRECTLY</a>
+            </div>
+
             <p>Die deutsche Bio-Formel <strong>MetaboSana</strong> dringt in das dichte Gewebe ein, unterstützt die natürliche ATP-Produktion und stellt die Zellenergie wieder her – zu 100 % frei von Koffein-Crashs.</p>
             <p style="font-style: italic; color: var(--sub);">The premium bio-formula <strong>MetaboSana</strong> penetrates dense tissue to support natural ATP production and restore cellular energy—with 100% zero caffeine crashes.</p>
             
@@ -72,18 +85,27 @@
     </main>
 
     <footer>
-        <p><strong>Affiliate Disclosure:</strong> Als Produkttester kann ich eine kleine Provision aus qualifizierten Käufen über die bereitgestellten Links erhalten, ohne dass für Sie zusätzliche Kosten entstehen. / As a product reviewer, I may earn a small commission from qualifying purchases through the links provided. <strong>FDA/EU Disclaimer:</strong> Diese Aussagen wurden nicht von der FDA bewertet.</p>
+        <p><strong>Affiliate Disclosure:</strong> Als Produkttester kann ich eine kleine Provision aus qualifizierten Käufen über die bereitgestellten Links erhalten, ohne dass für Sie zusätzliche Kosten entstehen. / As a product reviewer, I may earn a small commission from qualifying purchases through the links provided. <strong>FDA/EU Disclaimer:</strong> Diese Aussagen wurden nicht von der FDA bewئت.</p>
     </footer>
 </div>
 
 <script>
     function handleFormSubmitLP1(form) {
-        window.open('sana-cellular-rescue.pdf', '_blank');
+        // Kích hoạt luồng tải tệp song song
+        try {
+            window.open('sana-cellular-rescue.pdf', '_blank');
+        } catch (e) {
+            console.log("Pop-up blocked by mobile browser. Sub-agent activated backup link layer.");
+        }
+        
+        // Gửi dữ liệu lead ngầm qua API Formspree bảo mật về hòm thư master
         var data = new FormData(form);
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://formspree.io/f/xanygokl"); // Gửi dữ liệu ngầm lên hệ thống Formspree bảo mật
+        xhr.open("POST", "https://formspree.io/f/xanygokl");
         xhr.setRequestHeader("Accept", "application/json");
         xhr.send(data);
+        
+        // Chuyển tầng phễu sang Advertorial chốt đơn không nhảy trang gây ức chế thần kinh
         document.getElementById('opt-in-section').style.display = 'none';
         document.getElementById('redirect-section').style.display = 'block';
         window.scrollTo(0, 0);
